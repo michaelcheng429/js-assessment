@@ -25,15 +25,17 @@ exports.arraysAnswers = {
   },
 
   removeWithoutCopy: function(arr, item) {
-    // const result = [];
+    let length = arr.length;
 
-    // for (let i = 0; i < arr.length; i++) {
-    //   if (arr[i] !== item) {
-    //     result.push(arr[i]);
-    //   }
-    // }
+    for (let i = 0; i < length; i++) {
+      if (arr[i] === item) {
+        arr.splice(i, 1);
+        i--;
+        length--;
+      }
+    }
 
-    // return arr;
+    return arr;
   },
 
   append: function(arr, item) {
